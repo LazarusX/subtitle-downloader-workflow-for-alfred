@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.lazarusx.subtitle-downloader</string>
+	<key>connections</key>
+	<dict>
+		<key>4AF35734-CE3F-4980-9B8B-51DB70879CAD</key>
+		<array/>
+		<key>DC4BC605-6FF8-411A-A5B4-73512C62422E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4AF35734-CE3F-4980-9B8B-51DB70879CAD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ray Fang</string>
+	<key>description</key>
+	<string>从射手网下载字幕</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>下载字幕</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>tell application "Finder"	set pwd to folder of the front window as aliasend telltell application "System Events"	set file_list to get the POSIX path of every disk item of pwdend telltell application "System Events"	set extension_list to get the name extension of every disk item of pwdend tellcopy {"rmvb", "mkv", "avi", "mov", "mp4", "rm", "wmv", "3gp", "flv"} to video_extensionsset file_count to (get count of items in file_list)repeat with i from 1 to file_count	if item i of extension_list is in video_extensions then		log item i of file_list		set output to do shell script "python ShooterSubPyDownloader/Main.py " &amp; quoted form of item i of file_list	end ifend repeat</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4AF35734-CE3F-4980-9B8B-51DB70879CAD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>subtitle</string>
+				<key>subtext</key>
+				<string>从射手网下载与当前 Finder 窗口目录中视频文件匹配的字幕</string>
+				<key>text</key>
+				<string>下载字幕</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DC4BC605-6FF8-411A-A5B4-73512C62422E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>从射手网下载与当前 Finder 窗口目录中视频文件匹配的字幕</string>
+	<key>uidata</key>
+	<dict>
+		<key>4AF35734-CE3F-4980-9B8B-51DB70879CAD</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>DC4BC605-6FF8-411A-A5B4-73512C62422E</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://lazarusx.com</string>
+</dict>
+</plist>
