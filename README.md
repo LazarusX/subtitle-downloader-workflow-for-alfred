@@ -6,7 +6,7 @@
 
 ## 用法
 1. [下载](https://raw.github.com/LazarusX/subtitle-downloader-workflow-for-alfred/master/%E4%B8%8B%E8%BD%BD%E5%AD%97%E5%B9%95.alfredworkflow)并导入`下载字幕.alfredworkflow`
-1. 激活 Alfred，输入关键字`subtitlte`
+1. 激活 Alfred，输入关键字`subtitle`
 
 ## 感谢
 * [ShooterSubPyDownloader](https://github.com/magic282/ShooterSubPyDownloader) 的作者 [magic282](http://magic282.me/)
